@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class palindrome
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String org_str,str;
+        System.out.print("Enter string => ");
+        org_str = sc.nextLine(); //if string is in both cases it will convert in once case org_str is original string
+        str = org_str.toLowerCase();
+        str = str.replaceAll(" ",""); // removes all whitespaces
+        int j = str.length()-1;
+        boolean result = false;
+        for(int i = 0; i < str.length(); i++)
+        {
+            if(str.charAt(i) != str.charAt(j))
+            {
+                result = false;
+                break;
+            }
+            else
+                result = true;
+            j--;
+        }
+        if(result)
+            System.out.println(org_str+" is Palindrome");
+        else
+            System.out.println(org_str+" is not Palindrome");
+    }
+}
