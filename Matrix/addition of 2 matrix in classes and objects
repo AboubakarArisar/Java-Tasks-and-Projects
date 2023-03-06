@@ -1,0 +1,86 @@
+import java.util.Scanner;
+class Matrix {
+    private int rows;
+    private int cols;
+    private int[][] elements;
+Scanner sc = new Scanner(System.in);
+     Matrix(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        this.elements = new int[rows][cols];
+    }
+
+     int getRows() {
+        return this.rows;
+    }
+
+     int getCols() {
+        return this.cols;
+    }
+
+    void setData()
+    {
+        for (int i = 0; i < this.rows; i++)
+        {
+            for (int j = 0; j < this.cols; j++)
+            {
+                System.out.print("Enter the number at row  " + (i+1) + " column "+(j+1)+" : ");
+                this.elements[i][j] = sc.nextInt();
+            }
+        }
+    }
+
+     void add(Matrix other) {
+        if (this.rows != other.rows || this.cols != other.cols) {
+            System.out.println("Matrices cannot be added");
+            return;
+        }
+
+         int result[][] = new int[this.rows][this.cols];
+
+        for (int i = 0; i < this.rows; i++)
+        {
+            for (int j = 0; j < this.cols; j++)
+            {
+                result[i][j] = this.elements[i][j]+other.elements[i][j];
+            }
+        }
+
+        System.out.println("Result:");
+        for(int i = 0; i < this.rows; i++)
+        {
+            for(int j = 0; j < this.cols; j++)
+            {
+                System.out.print(result[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+     void print() {
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.cols; j++) {
+                System.out.print(this.elements[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Setting Matrix A Data");
+        Matrix A = new Matrix(2, 2);
+        A.setData();
+        System.out.println("Setting Matrix B Data");
+
+        Matrix B = new Matrix(2, 2);
+        B.setData();
+
+        System.out.println("Matrix A:");
+        A.print();
+
+        System.out.println("Matrix B:");
+        B.print();
+
+        A.add(B);
+    }
+}
