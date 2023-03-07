@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class array
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int pos,neg,zero,even,odd;
+         pos = neg = even = zero = odd =0;
+
+        int array[] = new int[10];
+        for(int i=0; i<10; i++)
+        {
+            System.out.print("Enter the number "+(i+1)+" : ");
+            array[i] = sc.nextInt();
+            if(array[i]>0)
+                pos++;
+            else if(array[i]<0)
+                neg++;
+            else
+                zero++;
+            if(array[i]%2==0)
+                even++;
+            else
+                odd++;
+        }
+        System.out.print("Positive number is array "+pos+"\nNegative number is array "+neg+"\nZeros in the array are "+zero+"\nEven number is array "+even+"\nOdd number is array "+odd);
+    }
+}
