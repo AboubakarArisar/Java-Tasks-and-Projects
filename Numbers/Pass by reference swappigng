@@ -1,0 +1,31 @@
+class Swap
+{
+    int a,b;
+    Swap()
+    {
+        a = b = 0; 
+    }
+    Swap(int a, int b)
+    {
+        this.a = a;
+        this.b = b;
+    }
+    void Pass_by_Refernce(Swap obj)
+    {
+        int temp = obj.a;
+        a = obj.b;
+        b = temp;
+    }
+}
+public class passbyRefernece 
+{
+    public static void main(String args[])
+    {
+        Swap s = new Swap(23,46);
+        System.out.print("Before Swapping | ");
+        System.out.println("a : "+s.a+" b : "+s.b);
+        s.Pass_by_Refernce(s);
+        System.out.print("After Swapping | ");
+        System.out.println("a : "+s.a+" b : "+s.b);
+    }
+}
