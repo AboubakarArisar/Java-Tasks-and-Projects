@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+public class TicTacToe {
+    static char[] block = {'1','2','3','4','5','6','7','8','9'};
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int player = 1, number, result = -1;
+        char obj;
+
+        do {
+            shape();
+
+            if(player%2==0)
+                player=2;
+            else
+                player=1;
+
+            if(player==1)
+                obj='X';
+            else
+                obj='O';
+
+            System.out.print("Player " + player + ": Enter the number: ");
+            number = input.nextInt();
+
+            if(number==1 && block[0]=='1') {
+                block[0]=obj;
+            } else if(number>=2 && number<=9) {
+                for(int i=1, j=2; i<9;i++,j++) {
+                    if(number==j) {
+                        block[i]=obj;
+                    }
+                }
+            } else {
+                System.out.println("Wrong number");
+
+                if(player==1)
+                    player++;
+                else if(player==2)
+                    player--;
+            }
+
+            result = checkwin();
+            if(result == 0 || result == 1)
+                break;
+
+            player++;
+        } while(result != 1);
+
+        shape();
+
+        if(result == 1) {
+            System.out.println("Player " + player + " won");
+        } else {
+            System.out.println("Match Tie");
+        }
+    }
+
+    public static int checkwin() {
+        for(int i=0; i<7; i+=3) {
+            if((block[i]==block[i+1])&& (block[i+1]==block[i+2]))
+                return 1;
+        }
+
+        if((block[0]==block[3]) && (block[3]==block[6]))
+            return 1;
+        else if((block[1]==block[4]) && (block[4]==block[7]))
+            return 1;
+        else if((block[2]==block[5]) && (block[5]==block[8]))
+            return 1;
+        else if((block[0]==block[4]) && (block[4]==block[8]))
+            return 1;
+        else if((block[2]==block[4]) && (block[4]==block[6]))
+            return 1;
+        else if (block[0] != '1' && block[1] != '2' && block[2] != '3' && block[3] != '4' && block[4] != '5' && block[5] != '6' && block[6] != '7' && block[7] != '8' && block[8] != '9') {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
+    public static void shape() {
+        System.out.println("=======================================");
+        System.out.println("============TIC TAC TOE ==============");
+        System.out.println("=======================================");
+        System.out.println();
+        System.out.println("Player 1 (X) - Player 2 (O)");
+        System.out.println();
+
+        for(int i=0; i<7; i=i+3) {
+            System.out.println("     |     |     ");
+            System.out.println("  " + block[i] + "  |  " + block[i+1] + "  |  " + block[i+2]);
+            System.out.println("_____|_____|_____");
+        }}}
