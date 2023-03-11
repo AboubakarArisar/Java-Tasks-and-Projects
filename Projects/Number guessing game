@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Game
+{
+    public static void main(String args[])
+    {
+        Scanner ob = new Scanner (System.in);
+        System.out.println("------------------------------------");
+        System.out.println("Welcome to the number guessing game ");
+        System.out.println("------------------------------------");
+
+        Random rand = new Random();
+        int guess = rand.nextInt(1);
+        int count = 0 ;
+
+        for(int i=1; i<=10; i++)
+        {
+
+            System.out.print("Enter the number you want to guess (0-10): ");
+            int num = ob.nextInt();
+            if (num == guess)
+            {
+                count++;
+                if(count == 2)
+                {
+                    System.out.println("Congratulations you guessed correctly");
+                    break;
+                }
+                else
+                continue;
+
+            } else {
+                System.out.println("Sorry Wrong Guess");
+                System.out.println("You are remained with " + (10-i) + " Attempts");
+
+            }
+        }
+    }
+}
