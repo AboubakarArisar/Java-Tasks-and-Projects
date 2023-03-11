@@ -1,0 +1,121 @@
+import java.util.Scanner;
+import java.util.Scanner;
+import java.util.Random;
+class Account
+{
+    static String ID,username,signupUsername,spassword,lpassword;
+    static int  accountNumber;
+    static double initialBalance = 0.0;
+
+    static double deposit;
+    static String loginpassword;
+    static void signup()
+    {
+
+        System.out.println("=================================================");
+        System.out.println("=====================SIGN_UP=======================");
+        System.out.println("=================================================");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to AB Banking Application");
+        System.out.print("Enter your username : ");
+        signupUsername = sc.nextLine();
+        System.out.print("Enter your password : ");
+        spassword = sc.nextLine();
+        Random rand = new Random();
+        accountNumber = rand.nextInt(1000000000);
+        System.out.println("Your Account number is : "+accountNumber);
+    }
+    static void login()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("=================================================");
+        System.out.println("=====================LOGIN=======================");
+        System.out.println("=================================================");
+        System.out.print("Enter your username : ");
+        username = sc.nextLine();
+        System.out.print("Enter your password : ");
+        lpassword = sc.nextLine();
+        if(username.equals(signupUsername) && lpassword.equals(spassword))
+        {
+            System.out.println("Successfull logged in");
+            System.out.println();
+        }
+        else
+            System.out.println("Wrong username or password");
+
+    }
+    static void info()
+    {
+        Scanner sc = new Scanner(System.in);
+         int opt = 1, choice ;
+        System.out.println("Hello " + username + " Welcome to AB Banking application");
+
+        while (opt == 1)
+        {
+            System.out.println("====================");
+            System.out.println("====================");
+            System.out.println("1.Deposit Balance");
+            System.out.println("2. Check Balance");
+            System.out.println("3. Withdraw");
+            System.out.println("4. Exit");
+            System.out.println("--------------");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            switch (choice)
+            {
+                case 1:
+                {
+                    System.out.print("How many rupees you want to deposit : ");
+                    deposit = sc.nextDouble();
+                    initialBalance += deposit;
+                }
+                case 2:
+                {
+                    System.out.println("Your Current Balance is : " + initialBalance);
+                    break;
+                }
+                case 3:
+                {
+                    System.out.print("How many Rupees you want to withdraw (amount should be multiple of 500) : ");
+                    double withdrawAmount = sc.nextDouble();
+                    if (withdrawAmount % 500 != 0) {
+                        System.out.println("Please enter amount in the multiples of 500");
+                        break;
+                    } else if (withdrawAmount > initialBalance) {
+                        System.out.println("Insufficient funds");
+                        break;
+                    }
+                    initialBalance = initialBalance - withdrawAmount;
+                    System.out.println("Your Remaining funds are : " + initialBalance);
+                    break;
+
+
+                }
+                case 4:
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invaild input");
+
+                    System.out.print("Do you want to do another transaction (1 for yes 0 for no) : ");
+                    opt = sc.nextInt();
+            }
+            }
+
+    }
+}
+public class ATM {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Account a1 = new Account();
+        Account.signup();
+        Account.login();
+        Account.info();
+
+
+
+
+
+
+    }
+}
