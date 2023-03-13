@@ -1,0 +1,57 @@
+import java.util.Date;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+class DateCalculator
+{
+    private int year,day,month;
+     DateCalculator calculate(DateCalculator calc)
+    {
+        DateCalculator fin = new DateCalculator();
+        fin.day = calc.day - this.day;
+        fin.month = calc.month - this.month;
+        fin.year = calc.year - this.year;
+        if(fin.day<0)
+        {
+            fin.month--;
+            fin.day+=30;
+        }
+        if(fin.month<0)
+        {
+            fin.year--;
+            fin.month+=12;
+        }
+        return fin;
+
+    }
+    static void display(DateCalculator ob)
+    {
+        JOptionPane.showMessageDialog(null, "You age is "+ob.year+" years "+ob.month+" months and "+ob.day+" days");
+
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        DateCalculator obj1 = new DateCalculator();
+        String input = JOptionPane.showInputDialog(null, "Enter Date of birth (dd:mm:yy)","Date of birth",JOptionPane.INFORMATION_MESSAGE);
+        String[] inputArr = input.split("-");
+        obj1.day = Integer.parseInt(inputArr[0]);
+        obj1.month = Integer.parseInt(inputArr[1]);
+        obj1.year = Integer.parseInt(inputArr[2]);
+
+        DateCalculator obj2 = new DateCalculator();
+        input = JOptionPane.showInputDialog(null, "Enter Today's date (dd:mm:yy)","Current Date",JOptionPane.INFORMATION_MESSAGE);
+        inputArr = input.split("-");
+        obj2.day = Integer.parseInt(inputArr[0]);
+        obj2.month =Integer.parseInt(inputArr[1]);
+        obj2.year = Integer.parseInt(inputArr[2]);
+
+        DateCalculator obj3 = new DateCalculator();
+        obj3 = obj1.calculate(obj2);
+        obj1.display(obj3);
+
+
+
+
+    }
+}
