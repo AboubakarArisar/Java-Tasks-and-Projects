@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class stringanagram
+{
+    public static void anagram(String str1, String str2)
+    {
+        int len = str1.length();
+        boolean result = true;
+        for(int i = 0; i<len; i++)
+        {
+            for(int j = 0; j<len; j++)
+            {
+                if (str1.charAt(i) == (str2.charAt(j))) {
+                    result = true;
+                    break;
+                }
+                else result=false;
+
+            }
+            if(result==false)
+                break;
+        }
+        if(result==true)
+            System.out.printf("Both strings are anagram");
+        else
+            System.out.println("Both strings are not anagram");
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str1,str2;
+        System.out.print("Enter String 1: ");
+        str1 = sc.nextLine();
+        System.out.print("Enter String 2 : ");
+        str2 = sc.nextLine();
+        str1 = str1.toUpperCase();
+        str2 = str2.toUpperCase();
+        anagram(str1,str2);
+    }
+}
