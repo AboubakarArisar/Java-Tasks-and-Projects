@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.*;
+public class Arraylist
+{
+    public static void main(String[] args)
+    {
+        String input;
+        Scanner sc = new Scanner(System.in);
+        ArrayList <String>list = new ArrayList<String>();
+        for(int i = 0; i <= 10; i++)
+        {
+            System.out.print("Enter : ");
+            input = sc.next();
+            list.add(i,input); //add function for adding values in array list
+        }
+
+        System.out.println(list); //for printing array list
+        list.remove(0); //remove function for removing values
+        list.remove(4); //remove function for removing values
+        System.out.println(list);
+        System.out.println(list.get(2)); // get function for getting values to be printed
+ 
+    }
+}
