@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.*;
+
+ class practice
+{
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       ArrayList<Integer>list = new ArrayList<Integer>();
+      list.add(0,4);
+      list.add(1,3);
+       for(int i = 0; i<list.size();i++)
+       {
+           if(list.get(i)<3)
+               list.remove(i);
+       }
+        System.out.println("Values after removing");
+       for(int i =0 ; i<list.size(); i++)
+       {
+           System.out.println(list.get(i));
+           System.out.println();
+       }
+    }
+}
