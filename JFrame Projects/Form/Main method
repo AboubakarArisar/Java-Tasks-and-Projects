@@ -1,0 +1,10 @@
+package projects;
+
+class MyForm extends window
+{
+    public static void main(String ab[])
+    {
+        window mywindow = new window();
+
+    }
+}
