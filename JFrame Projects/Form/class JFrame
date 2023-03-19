@@ -1,0 +1,15 @@
+package projects;
+
+import javax.swing.JFrame;
+public class window extends JFrame
+{
+   public window()
+    {
+        super.setTitle("First Form");
+        super.setSize(400,400);
+        super.setLocation(0,0);
+        setVisible(true);
+
+
+    }
+}
