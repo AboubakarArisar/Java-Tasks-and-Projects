@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.*;
+
+ class practice
+{
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       String name = "";
+       ArrayList<String> list = new ArrayList<String>();
+       int ch  = 1;
+       do
+       {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the name : ");
+        name = input.nextLine();
+        list.add(name);
+        System.out.print("Do you want to enter other name (1 for yes 0 for no): ");
+        ch = sc.nextInt();
+        System.out.println("Do you want to remove any name if yes then enter it's index (1 of yes 0 for no): ");
+        int opt = input.nextInt();
+        if(opt == 1){
+        int index = input.nextInt();
+        list.remove(index);}
+        
+
+       }while(ch == 1);
+       System.out.println(list);
+
+       
+    }
+}
