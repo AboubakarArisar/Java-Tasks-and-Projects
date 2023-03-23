@@ -1,0 +1,31 @@
+import java.util.*;
+public class oneDigit {
+    public static void main(String[] args) {
+        int number;
+        char opt = 'y';
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.print("Enter one digit number --> ");
+            number = sc.nextInt();
+            if (number < 0 || number > 9)
+            {
+                System.out.println("Please enter valid number");
+
+              
+
+            }
+             else
+            {
+               
+                String words[] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+
+                System.out.println("The number is " + words[number]);
+            }
+            System.out.print("Do you want to enter other number (y/n)");
+             opt = sc.next().charAt(0);
+
+
+    }while(opt =='y'|| opt == 'Y');
+        System.out.println("Thank you ");
+    }
+}
