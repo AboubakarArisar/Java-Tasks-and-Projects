@@ -1,0 +1,39 @@
+import java.util.*;
+public class oneDigit {
+    public static void main(String[] args) {
+        int number;
+        char opt = 'y';
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.print("Enter one digit number --> ");
+            number = sc.nextInt();
+            if (number < 0 || number > 99)
+            {
+                System.out.println("Please enter valid number");
+
+
+
+            }
+             else
+            {
+                int unit = number%10;
+                int ten = number/10;
+
+
+                String words[] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine","Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen","Sixteen", "Seventeen","Eighteen","Nineteen"};
+                String tens[] = {"","","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+                if(number>0 && number<=19)
+                System.out.println("The number is " + words[number]);
+                else
+                {
+                    if(unit==0)words[0]="";
+                    System.out.println("The number is " + tens[ten]+" "+words[unit]);
+            }}
+            System.out.print("Do you want to enter other number (y/n) -->");
+             opt = sc.next().charAt(0);
+
+
+    }while(opt =='y'|| opt == 'Y');
+        System.out.println("Thank you ");
+    }
+}
