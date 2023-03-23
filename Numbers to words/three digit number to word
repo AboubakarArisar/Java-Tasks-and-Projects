@@ -1,0 +1,49 @@
+import java.util.*;
+public class oneDigit {
+    public static void main(String[] args) {
+        int number;
+        char opt = 'y';
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.print("Enter one digit number --> ");
+            number = sc.nextInt();
+            if (number < 0 || number > 999)
+            {
+                System.out.println("Please enter valid number");
+
+
+
+            }
+             else
+            {
+                int unit = number%10;
+                int rem = number/10;
+                int ten = rem%10;
+                int hun = number /100;
+
+
+                String words[] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine","Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen","Sixteen", "Seventeen","Eighteen","Nineteen"};
+                String tens[] = {"","","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+                String hundreds[] = {"","One hundred","Two hundred","Three hundred","Four hundred","Five hundred","Six hundred","Seven hundred","Eight hundred","Nine hundred"};
+                if(number>0 && number<=19)
+                System.out.println("The number is " + words[number]);
+                else if(number>19 && number<=99)
+                {
+                    if(unit==0)words[0]="";
+                    System.out.println("The number is " + tens[ten]+" "+words[unit]);
+            }
+                else
+                {
+                    if(unit==0)words[0]="";
+                    System.out.println("The number is "+hundreds[hun]+" "+tens[ten]+" "+words[unit]);
+                }
+            }
+
+            System.out.print("Do you want to enter other number (y/n) -->");
+             opt = sc.next().charAt(0);
+
+
+    }while(opt =='y'|| opt == 'Y');
+        System.out.println("Thank you ");
+    }
+}
