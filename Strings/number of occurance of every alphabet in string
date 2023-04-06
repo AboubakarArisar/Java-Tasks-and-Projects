@@ -1,0 +1,35 @@
+package arisar;
+import java.util.*;
+
+public class string
+{
+    public static void repetation(String str)
+    {
+        str = str.toLowerCase();
+        char c;
+        String b = new String("abcdefghijklmnopqrstuvwxyz");
+        for (int i = 0; i < b.length(); i++)
+        {
+           int count = 0 ;
+           for(int j = 0; j < str.length(); j++)
+           {
+               if(b.charAt(i) == str.charAt(j))
+               {
+                   count++;
+               }
+           }
+
+            if(count>1)
+            {
+                System.out.println("The character "+b.charAt(i)+" is repeated "+count+" times");
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string --> ");
+        String s = sc.nextLine();
+        repetation(s);
+    }
+}
