@@ -1,0 +1,52 @@
+package arisar;
+
+import java.util.Scanner;
+
+public class largeword {
+    public static void method(String st) {
+        int index = 0;
+        int count = 0;
+        String sub = "";
+        String maxWord = "";
+        int maxLength = 0;
+        for (int i = 0; i < st.length(); i++) {
+            if (st.charAt(i) == ' ') {
+                count++;
+            }
+        }
+        count += 1;
+    if (count == 1) {
+            System.out.println("Maximum word length: " + st.length());
+            System.out.println("Word with maximum length: " + st);
+            return;
+        }
+
+        String part[] = new String[count];
+        int k = 0;
+        for (int i = 0; i < st.length(); i++) {
+            if (st.charAt(i) == ' ') {
+                sub = st.substring(index, i);
+                index = i + 1;
+                part[k] = sub;
+                k++;
+            }
+        }
+        part[k] = st.substring(index);
+        for (int i = 0; i < part.length; i++) {
+            if (part[i].length() > maxLength) {
+                maxLength = part[i].length();
+                maxWord = part[i];
+            }
+        }
+        System.out.println("Maximum word length: " + maxLength);
+        System.out.println("Word with maximum length: " + maxWord);
+    }
+
+    public static void main(String[] args) {
+        String str;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter string --> ");
+        str = sc.nextLine();
+        method(str);
+    }
+}
