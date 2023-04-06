@@ -1,0 +1,48 @@
+package arisar;
+
+import java.util.Scanner;
+
+public class palindrome {
+    static boolean isPalindrome(String str) {
+        boolean result = true;
+        int k = str.length() - 1;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != str.charAt(k)) {
+                result = false;
+                break;
+            }
+            k--;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String str = "";
+        String st = "";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter string --> ");
+        str = sc.nextLine();
+        int index = 0;
+        String toSend;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                toSend = str.substring(index, i);
+                if (isPalindrome(toSend)) {
+                    for (int j = index; j < i; j++) {
+                        st += "*";
+                    }
+                    str = str.substring(0, index) + st + str.substring(i);
+                }
+                index = i + 1;
+                st = "";
+            }
+        }
+        if (isPalindrome(str)) {
+            for (int j = index; j < str.length(); j++) {
+                st += "*";
+            }
+            str = str.substring(0, index) + st;
+        }
+        System.out.println("After string : " + str);
+    }
+}
