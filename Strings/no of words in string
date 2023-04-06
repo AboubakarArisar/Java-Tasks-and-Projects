@@ -1,0 +1,19 @@
+import java.util.*;
+public class string
+{
+    public static void main(String[] ar)
+    {
+        String st;
+        Scanner obj = new Scanner(System.in);
+        System.out.print("Enter string : ");
+        int ct =0 ;
+        st = obj.nextLine();
+        for(int i = 0; i <st.length(); i++)
+        {
+            if(st.charAt(i) == ' ')
+                ct++;
+        }
+        
+        System.out.println("Numbers of words in sentence are "+(ct+1));
+    }
+}
