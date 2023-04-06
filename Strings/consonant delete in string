@@ -1,0 +1,36 @@
+package arisar;
+import java.util.Scanner;
+
+public class consonant
+{
+    public static void method(String string)
+    {
+        int count = 0;
+        char c[] = new char[20];
+        for(int i = 0; i < string.length(); i++)
+        {
+            if(string.charAt(i) == 'A'||string.charAt(i) == 'a'||string.charAt(i)=='e'||string.charAt(i) == 'E'||string.charAt(i) == 'o'||string.charAt(i) == 'O'||string.charAt(i) == 'u'||string.charAt(i) == 'U')
+            {
+                c[count] = string.charAt(i);
+                count++;
+            }
+            else continue;
+        }
+        System.out.print("String after deleting consonats --> ");
+        for(int i =0 ; i<count; i++)
+        {
+            System.out.print(c[i]);
+        }
+
+
+    }
+    public static void main(String[] args)
+    {
+        String str = "";
+        Scanner sc  = new Scanner(System.in);
+        System.out.print("Enter  the string --> ");
+        str = sc.nextLine();
+        System.out.println("String before is --> "+str);
+        method(str);
+    }
+}
