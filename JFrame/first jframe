@@ -1,0 +1,30 @@
+package Rent;
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+public class login
+{
+    static void display()
+    {
+
+        JFrame frame = new JFrame();
+        frame.setBackground(Color.GREEN);
+        frame.setSize(800, 600);
+        Button b = new Button("Arisarsahab");
+        b.setBounds(200, 200, 100, 100);
+        b.setLocation(300, 200);
+        b.setBackground(Color.GRAY);
+        b.setBounds(100, 100, 100, 100);
+
+        frame.add(b);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+
+    }
+    public static void main(String[] args)
+    {
+        display();
+    }
+}
