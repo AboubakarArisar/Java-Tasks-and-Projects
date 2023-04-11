@@ -1,0 +1,32 @@
+import java.util.*;
+interface bank
+{
+    void withdraw();
+    void deposit();
+
+    int no = 0;
+    int yes = 1;
+}
+class Customer implements bank
+{
+ public void withdraw()
+ {
+     System.out.println("Withdraw");
+ }
+ public void deposit()
+ {
+     System.out.println("Deposit");
+ }
+}
+public class prc2
+{
+    public static void main(String args[])
+    {
+        Customer cust = new Customer();
+        cust.deposit();
+        cust.withdraw();
+        System.out.println(bank.no);
+        System.out.println(bank.yes);
+    }
+
+}
