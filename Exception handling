@@ -1,0 +1,22 @@
+import java.util.*;
+public class Exceptionexamp
+{
+    public static void main(String arg[])
+    {
+        int n1, n2;
+        System.out.print("Enter first number : ");
+        Scanner sc = new Scanner(System.in);
+        n1 = sc.nextInt();
+        System.out.print("Enter second number : ");
+        n2 = sc.nextInt();
+        try
+        {
+            System.out.println("Division is : " + n1 / n2);
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Dont divide by zero please!");
+        }
+        System.out.println("Thank you ");
+    }
+}
