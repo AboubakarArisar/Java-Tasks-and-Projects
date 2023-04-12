@@ -1,0 +1,65 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.Color;
+
+
+public class calculator {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Calculator");
+        JPanel panel = new JPanel(new GridLayout(5, 5, 6, 6));
+        final JTextField tf = new JTextField();
+        tf.setBounds(50, 50, 150, 20);
+        tf.setLocation(100, 40);
+
+
+        JButton b0 = new JButton("0");
+        JButton b1 = new JButton("1");
+        JButton b2 = new JButton("2");
+        JButton b3 = new JButton("3");
+        JButton b4 = new JButton("4");
+        JButton b5 = new JButton("5");
+        JButton b6 = new JButton("6");
+        JButton b7 = new JButton("7");
+        JButton b8 = new JButton("8");
+        JButton b9 = new JButton("9");
+        JButton bplus = new JButton("+");
+        JButton bmin = new JButton("-");
+        JButton bmul = new JButton("*");
+        JButton bdiv = new JButton("/");
+        JButton bequal = new JButton("=");
+        JButton bce = new JButton("CE");
+        JButton bc = new JButton("C");
+        JButton bpo  = new JButton("^");
+        JButton bpoint = new JButton(".");
+        JButton bdz = new JButton("00");
+
+        panel.add(b7);
+        panel.add(b8);
+        panel.add(b9);
+        panel.add(bdiv);
+        panel.add(b4);
+        panel.add(b5);
+        panel.add(b6);
+        panel.add(bmul);
+        panel.add(b1);
+        panel.add(b2);
+        panel.add(b3);
+        panel.add(bmin);
+        panel.add(b0);
+        panel.add(bce);
+        panel.add(bc);
+        panel.add(bplus);
+        panel.add(bdz);
+        panel.add(bequal);
+        panel.add(bpo);
+        panel.add(bpoint);
+
+
+
+        f.add(panel, BorderLayout.CENTER);
+        f.add(tf, BorderLayout.NORTH);
+
+        f.setSize(300, 300);
+        f.setVisible(true);
+    }
+}
