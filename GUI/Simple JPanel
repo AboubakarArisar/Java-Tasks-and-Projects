@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+public class FirstGui
+{
+    public static void main(String[] args)
+    {
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout(2,2));
+        p.setSize(100,100);
+        JFrame frame = new JFrame();
+        frame.setLayout(new FlowLayout()); // flowlayout is default we don't have to set it manually
+
+        frame.setSize(300,300); //setting the size of the of frame
+
+        Container c = frame.getContentPane();
+
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE); //to finsih the program from running state
+
+
+
+        JButton b1 = new JButton("1"); //creating a JButton
+        JButton b2 = new JButton("2"); //creating a JButton
+        JButton b3 = new JButton("3"); //creating a JButton
+        JButton b4 = new JButton("4"); //creating a JButton
+        b1.setFocusable(false); //setting focus to false
+        b2.setFocusable(false);
+        b3.setFocusable(false);
+        b4.setFocusable(false);
+        p.add(b1);//adding buttons to panel
+        p.add(b2);
+        p.add(b3);
+        p.add(b4);
+        frame.add(p);//adding panel to frame
+        frame.setVisible(true); //as default setvisible is false so we have to set it to true for visibility
+
+    }
+}
