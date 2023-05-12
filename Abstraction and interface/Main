@@ -1,0 +1,22 @@
+public class TestAnimals {
+    public static void main(String[] args) {
+        Fish f = new Fish();
+        cat c = new cat("fluffy");
+        Animal a = new Fish();
+        Animal e = new cat();
+        Spider s = new Spider(4);
+
+        //Demostrate different implementations of an interface
+        f.play();
+        c.play();
+
+        //Demostrate virtual method invocation
+        e.eat();
+        e.walk();
+
+        //Demostrate calling super methods
+        a.walk();
+        s.walk();
+        s.eat();
+    }
+}
