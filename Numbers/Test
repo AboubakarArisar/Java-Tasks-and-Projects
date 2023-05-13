@@ -1,0 +1,9 @@
+import Calc.Sub;
+public class Test 
+{
+public static void main(String args[])
+{
+int a = 9, b = 8;
+Sub sub = new Sub();
+System.out.print("Subtraction of the numbers through package is : "+sub.sub(a,b));
+}}
