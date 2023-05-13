@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Task2
+{
+public static void main(String arg[])
+{
+int array[] = new int[6];
+Scanner sc = new Scanner(System.in);
+for(int i = 0; i < 6; i++)
+{
+System.out.print("Enter the value at index " +(i+1)+" : ");
+array[i] = sc.nextInt();
+}
+int searchValue ;
+System.out.print("Enter the value you want to search in the array --> ");
+searchValue = sc.nextInt();
+boolean flag = false;
+
+for(int i = 0; i<6; i++)
+{
+if(searchValue==array[i])
+{
+System.out.println(searchValue+" is found in the array at index no "+ i);
+flag = true;
+}
+}
+if(flag==false)
+{
+System.out.println(searchValue+" is not found in the array");
+}
+}}
