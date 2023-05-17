@@ -1,0 +1,14 @@
+public class IllegalExperience extends Exception
+{
+    IllegalExperience()
+    {
+        System.out.println("Invaild Experience");
+    }
+}
+class InvaildEmailFormat extends Exception
+{
+    InvaildEmailFormat()
+    {
+        System.out.println("You entered an invaild email format");
+    }
+}
