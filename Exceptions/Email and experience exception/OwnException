@@ -1,0 +1,59 @@
+class make
+{
+    private String email;
+    private double exp;
+    void setExp(double exp) throws IllegalExperience
+    {
+        if(exp < 0 || exp > 50)
+        {
+            throw new IllegalExperience();
+        }
+        else {
+            this.exp = exp;
+        }
+    }
+    void setEmail(String email) throws InvaildEmailFormat
+    {
+        if(email.matches("[a-z0-9]+@[a-z]+\\.[a-z]{2,3}"))
+        {
+            this.email = email;
+        }
+        else
+        {
+            throw new InvaildEmailFormat();
+        }
+    }
+    double getExp()
+    {
+        return exp;
+    }
+    String getEmail()
+    {
+        return email;
+    }
+
+}
+public class MakingOwnException
+{
+
+    public static void main(String[] arg) throws IllegalExperience,InvaildEmailFormat
+    {
+        make m1 = new make();
+        try
+        {
+            m1.setEmail("aboubakarbscsf22@iba.edu");
+
+            m1.setExp(23);
+        }
+        catch(IllegalExperience ie)
+        {
+            System.out.println(ie.getMessage());
+        }
+        catch(InvaildEmailFormat ie)
+        {
+            System.out.println(ie.getMessage());
+        }
+        System.out.println("Email : "+m1.getEmail());
+        System.out.println("Experience : "+m1.getExp());
+    }
+}
