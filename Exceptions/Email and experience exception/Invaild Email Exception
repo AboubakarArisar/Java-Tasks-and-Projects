@@ -1,0 +1,34 @@
+import java.util.*;
+class invaildEmail extends Exception
+{
+    invaildEmail()
+    {
+        super("missing @ in email");
+    }
+}
+public class Test
+{
+    public static void main(String arg[]) throws invaildEmail
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the email address : ");
+        String email = sc.next();
+        boolean flag = email.contains("@");
+        try
+        {
+            if(flag == false)
+            {
+                throw new invaildEmail();
+            }
+            else
+            {
+                System.out.println("Email address is " + email);
+            }
+        }
+        catch(invaildEmail em)
+        {
+            System.out.println(em.getMessage());
+        }
+    }
+}
+
